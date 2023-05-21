@@ -1,8 +1,17 @@
+import subprocess
+
+# Install necessary packages
+subprocess.check_call(['pip', 'install', 'requests'])
+subprocess.check_call(['pip', 'install', 'matplotlib'])
+
+# Rest of your code
+import os
 import requests
 from requests.auth import HTTPBasicAuth
 import streamlit as st
 import matplotlib.pyplot as plt
 import math
+
 
 st.set_page_config(layout="wide")
 
@@ -21,7 +30,7 @@ st.markdown(
 # JIRA API details
 jira_url = "https://mattyoungmedia.atlassian.net"
 api_username = "aaryan4@illinois.edu"
-api_token = 'ATATT3xFfGF0Jk63JnApzkAXTN7zNgpRQcPEp3xthy5ioQX453Qn2ndMVrXJFLToEQX6BtHaib-fZqigNATGLUMMQQh_U2jjR-DOEzEo3SvrHriAfBxDoh72su-sqXjHK-3WQXheXQiCj8NYpcVbaXw0nvzV9LbeHi68S65sBU7gtmZkiOe4whY=FA243842'
+api_token = os.environ.get('JIRA_API_TOKEN')
 
 
 def get_all_tickets():
