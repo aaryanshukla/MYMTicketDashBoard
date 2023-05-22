@@ -14,7 +14,6 @@ import math
 from dotenv import load_dotenv
 
 
-load_dotenv()
 
 st.set_page_config(layout="wide")
 
@@ -31,6 +30,8 @@ st.markdown(
 )
 
 # JIRA API details
+load_dotenv()
+
 jira_url = "https://mattyoungmedia.atlassian.net"
 api_username = "aaryan4@illinois.edu"
 api_token = os.getenv("API_KEY")
