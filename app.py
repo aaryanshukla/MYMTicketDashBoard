@@ -11,7 +11,10 @@ from requests.auth import HTTPBasicAuth
 import streamlit as st
 import matplotlib.pyplot as plt
 import math
+from dotenv import load_dotenv
 
+
+load_dotenv()
 
 st.set_page_config(layout="wide")
 
@@ -30,8 +33,7 @@ st.markdown(
 # JIRA API details
 jira_url = "https://mattyoungmedia.atlassian.net"
 api_username = "aaryan4@illinois.edu"
-api_token = os.environ.get('JIRA_API_TOKEN')
-
+api_token = os.getenv("API_KEY")
 
 def get_all_tickets():
     jql_query = 'project = MOP'
